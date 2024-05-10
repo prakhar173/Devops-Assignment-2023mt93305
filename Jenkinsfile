@@ -6,10 +6,9 @@ pipeline {
  steps {
  // Checkout code from Git repository
  checkout([$class: 'GitSCM',
- branches: [[name: '*/main']], name
- userRemoteConfigs: [[url: 'https://
-https://git.iontrading.com/gariman.gupta/2023mt93072_devops ']]])
- }
+ branches: [[name: '*/master']], name
+ userRemoteConfigs: [[url: 'https://github.com/prakhar173/Devops-Assignment-2023mt93305 ']]])
+    }
  }
 
  stage('Build and Compile') {
