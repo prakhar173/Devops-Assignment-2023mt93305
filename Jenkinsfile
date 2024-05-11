@@ -8,7 +8,4 @@ node {
         // Run Maven clean and package commands
         bat "mvn clean package"        
         }
-        stage('Deploy') {
-                echo 'Deploying....'
-        }
 }
