@@ -6,7 +6,7 @@ node {
       // Define the Maven executable path
         def mvnHome = tool 'maven'
         // Run Maven clean and package commands
-        bat "${mvnHome}/bin/mvn clean package"        
+        bat "mvn clean package"        
         }
         stage('Deploy') {
                 echo 'Deploying....'
