@@ -4,14 +4,14 @@ pipeline {
     agent any
 
     options {
-        debug true
+        timestamps()
     }
 
     stages {
         stage('Use Shared Pipeline') {
             steps {
                 script {
-                    pipeline()
+                    pipeline() // Call the shared library function
                 }
             }
         }
