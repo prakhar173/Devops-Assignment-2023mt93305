@@ -3,15 +3,15 @@
 pipeline {
     agent any
 
-    options {
-        timestamps()
-    }
-
     stages {
         stage('Use Shared Pipeline') {
             steps {
-                script {
-                    pipeline() // Call the shared library function
+                catchError(buildResult: 'FAILURE', stageResult: 'FAILURE') {
+                    script {
+                        echo "Debug: Attempting to call the shared pipeline"
+                        pipeline()
+                        echo "Debug: Shared pipeline executed"
+                    }
                 }
             }
         }
