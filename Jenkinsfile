@@ -1,5 +1,7 @@
 @Library('shared_pipeline') _
 
+import com.example.MyPipeline
+
 pipeline {
     agent any
 
@@ -7,8 +9,8 @@ pipeline {
         stage('Use Shared Pipeline') {
             steps {
                 script {
-                    // Call the pipeline method from the shared library
-                    pipeline()
+                    def myPipeline = new MyPipeline()
+                    myPipeline.call()
                 }
             }
         }
