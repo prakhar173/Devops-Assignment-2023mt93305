@@ -1,6 +1,4 @@
-@Library('shared_pipeline') _
-
-import com.example.MyPipeline
+@Library('shared-pipeline') _
 
 pipeline {
     agent any
@@ -9,8 +7,7 @@ pipeline {
         stage('Use Shared Pipeline') {
             steps {
                 script {
-                    def myPipeline = new MyPipeline()
-                    myPipeline.call()
+                    pipeline() // Calls the vars/pipeline.groovy method
                 }
             }
         }
